@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>에그머니 -자산 포트폴리오 추천 서비스-</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/surveycss/style.css" />
+    <link rel="stylesheet" href="/static/css/surveycss/sub.css" />
+    <script src="portfolio.js" defer></script>
+    <script src="/static/js/libs/jquery-3.4.1.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/sub/web_logo.png">
+<script src="/static/js/libs/jquery-ui.min.js"></script>
+<script src="/static/js/libs/jquery.easing.min.js"></script>
+<script src="/static/js/libs/jquery.touchSwipe.min.js"></script>
+<script src="/static/js/libs/imagesloaded.pkgd.min.js"></script>
+<script src="/static/js/libs/ScrollMagic.min.js"></script>
+<script src="/static/js/libs/swiper.min.js"></script>
+<script src="/static/js/libs/moment.min.js"></script>
+<script src="/static/js/libs/Chart.bundle.min.js"></script>
+<script src="/static/js/libs/chartjs-plugin-labels.min.js"></script>
+<script src="/static/js/ui.utill.js"></script>
+<script src="/static/js/ui.commonfa93.js?v=20210525"></script>
+
+<script src="/static/js/libs/jquery.cookie.js"></script>
+<script src="/static/js/common/cookie.js"></script>
+<script src="/static/js/common/gnb.js"></script>
+  </head>
+  <body>
+    <div class="portfolio-option ani visible-2-1" style="display: block">
+      <!----------------------------------------------------->
+      <form name="qform" id="qform" method="get" action="/qform_post">
+      <input type="hidden" name="qlist" id="qlist">
+      <div id="q" data-step="2" class="steparea" >
+        <h2 class="">Grable & Lytton의 시나리오형 문항 (총 11문항)</h2>
+        <ul class="options">
+          <li id='q1' data-step="2-1" >
+            <h3 class="title" style="line-height:40px;">
+              1. 당신은 <strong>“일생에 단 한번뿐인 꿈의 여행”</strong>을 위한 저축을 달성했습니다.
+              <br>꿈의 여행을 떠나기 3주전 당신은 직업을 잃었습니다. <br>당신은 어떻게 하겠습니까?
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-1"
+                  id="f-options-2-1-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-1-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in">여행을<br>취소한다</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-1"
+                  id="f-options-2-1-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-1-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">계획보다 <br>값싼 여행을 간다</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-1"
+                  id="f-options-2-1-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-1-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >계획대로<br> 여행을 간다</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="3"
+                  data-value="4"
+                  name="f-options-2-1"
+                  id="f-options-2-1-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-1-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">시간이 남으니<br> 여행을 계획보다<br> 늘린다</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn prev-button">
+                이전
+              </button>
+              <button
+                      id="q1bt"
+                type="button"
+                data-rel="next"
+                class="btn point next-button"
+                      onclick='next()'
+              >
+                다음
+              </button>
+            </div>
+          </li >
+          <li id='q2' data-step="2-2" >
+            <h3 class="title" style="line-height:40px;">
+              2. 투자용도로 <strong>예상하지 못했던 2,000만원</strong>이 생겼다면<br> 어떻게 하겠습니까?
+
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-2"
+                  id="f-options-2-2-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-2-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">예금이나 <br>단기 금융 시장 상품(MMA, CMA) 등에 저축한다.</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-2"
+                  id="f-options-2-2-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-2-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">채권 혹은 채권형 펀드에 투자한다.</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-2"
+                  id="f-options-2-2-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-2-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">주식이나 주식형 펀드에 투자한다.</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next2()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q3' data-step="2-3" >
+            <h3 class="title" style="line-height:40px;">
+              3. 자신의 경험에 비추어볼 때 <strong>주식형 펀드에 투자하는 것</strong>을 <br>얼마나 편안하게 느끼십니까?
+
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-3"
+                  id="f-options-2-3-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-3-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in">전혀 편안하지 않다.</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-3"
+                  id="f-options-2-3-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-3-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >보통이다.</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-3"
+                  id="f-options-2-3-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-3-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >아주 편안하다.</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev2()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next3()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q4' data-step="2-4" >
+            <h3 class="title" style="line-height:40px;">
+              4. 당신이 <strong>“위험”</strong>이란 단어를 생각할 때,<br> 마음 속에 가장 먼저 떠오르는 단어는 무엇입니까?
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-4"
+                  id="f-options-2-4-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-4-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in">손실</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-4"
+                  id="f-options-2-4-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-4-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >불확실성</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-4"
+                  id="f-options-2-4-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-4-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >기회</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-4"
+                  id="f-options-2-4-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-4-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >설렘</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev3()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next4()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q5' data-step="2-5" >
+            <h3 class="title" style="line-height:40px;font-size:23px;">
+              5. 전문가들이 현재 금의 자산가격은 상승 할 것이고,
+              <strong>채권(국채)의 가격은 하락할 것</strong>이라고 예측을 내놓았습니다.<br>
+              하지만 전문가들은 대체로 <strong>국채가 안전하다는 것에 동의</strong>합니다.<br>
+              당신의 <strong>투자자산 대부분이 고이율 국채</strong>로 구성되어 있다면 어떻게 하시겠습니까?
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-5"
+                  id="f-options-2-5-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-5-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in">국채 보유</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-5"
+                  id="f-options-2-5-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-5-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >국채 전량 매도 후<br> 50% 예금,<br>50% 금 투자 </span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-5"
+                  id="f-options-2-5-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-5-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >국채 전량 매도 후<br> 100% 금 투자</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="3"
+                  name="f-options-2-5"
+                  id="f-options-2-5-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-5-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >국채 전량 매도 후<br> 돈을 더 빌려서<br> 금 투자</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev4()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next5()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q6' data-step="2-6" >
+            <h3 class="title" style="line-height:40px;">
+              6. 아래의 4가지 사항은 <br>각각 투자옵션에 대한 <strong>최고의 결과와 최악의 결과를</strong> 보여줍니다. <br>당신이 가장 선호하는 것은 무엇인가요?
+
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-6"
+                  id="f-options-2-6-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-6-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">최고 20만원 이익<br>최악 0원 손실</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-6"
+                  id="f-options-2-6-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-6-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >최고 80만원 이익<br>최악 20만원 손실 </span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="3"
+                  data-value="3"
+                  name="f-options-2-6"
+                  id="f-options-2-6-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-6-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >최고 260만원 이익<br>최악 80만원 손실</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="4"
+                  data-value="4"
+                  name="f-options-2-6"
+                  id="f-options-2-6-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-6-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >최고 480만원 이익<br> 최악 240만원 손실</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev5()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next6()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q7' data-step="2-7" >
+            <h3 class="title" style="line-height:40px;">
+              7. 당신이 가지고 있는 것에 <strong>추가로 100만원을 받았습니다.</strong><br>아래 두 가지 중에서 하나를 고른다면 당신은 무엇을 고를 것입니까?
+
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-7"
+                  id="f-options-2-7-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-7-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">확실히 50만원을<br> 얻을 수 있는 기회</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-7"
+                  id="f-options-2-7-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-7-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >50%의 확률 100만원</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev6()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next7()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q8' data-step="2-8" >
+            <h3 class="title" style="line-height:40px;">
+              8. 당신이 가지고 있는 것에 <strong>추가로 200만원을 받았습니다.</strong><br>아래 두 가지 중에서 하나를 고른다면 당신은 무엇을 고를 것입니까?
+
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-8"
+                  id="f-options-2-8-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-8-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">50만원의 <br>확실한 손실</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-8"
+                  id="f-options-2-8-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-8-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >50%의 확률 <br>100만원 손실<br> 50%의 확률 <br>무손실</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev7()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next8()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q9' data-step="2-9" >
+            <h4 class="title" style="line-height:40px;font-size:23px;">
+              9. 당신의 가족 중에 누군가 당신에게 1억원을 유산으로 남겨 주었습니다. <br>
+              유언서에 당신은 반드시 아래 항목 중 하나에 <strong>유산으로 받은 1억원을 모두 투자</strong>하도록 되어있습니다.<br>
+              이러한 조건에서 1억을 받는다면 당신이 <strong>선택할 투자항목</strong>은 무엇입니까?
+
+            </h4>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-9"
+                  id="f-options-2-9-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-9-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >예적금 계좌</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-9"
+                  id="f-options-2-9-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-9-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" >펀드</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-9"
+                  id="f-options-2-9-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-9-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" > 15가지 주식<br> 직접투자</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-9"
+                  id="f-options-2-9-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-9-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" > 금, 은, 석유<br>상품 투자</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev8()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next9()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q10' data-step="2-10" >
+            <h4 class="title" style="line-height:40px;">
+              10. 당신이 <strong>2,000만원을 투자해야 한다면</strong>,<br>다음 중 가장 <strong>마음에 드는 투자옵션</strong>은 어떤 것 입니까?
+
+            </h4>
+            <div class="option col-4">
+              <span class="fm-item">
+									<input type="radio" value="1" data-value="1" name="f-options-2-10" id="f-options-2-10-1" class="fm-rad-etc">
+									<label for="f-options-2-10-1" class="fm-rad-i risk" id="fm-rad-i">
+										<span class="in">
+											<span class="ir-b i-risk">저수익, 저위험</span>
+											<span class="range">
+												<span class="max">최고 <em>+4%</em></span>
+												<span class="min">최저 <em>-2%</em></span>
+											</span>
+											<small class="ps">기대수익률 2%</small>
+										</span>
+									</label>
+								</span>
+              <span class="fm-item">
+									<input type="radio" value="2" data-value="2" name="f-options-2-10" id="f-options-2-10-2" class="fm-rad-etc">
+									<label for="f-options-2-10-2" class="fm-rad-i risk" id="fm-rad-i">
+										<span class="in">
+											<span class="ir-b i-risk-2">중수익, 중위험</span>
+											<span class="range">
+												<span class="max">최고 <em>+11%</em></span>
+												<span class="min">최저 <em>-5%</em></span>
+											</span>
+											<small class="ps">기대수익률 6%</small>
+										</span>
+									</label>
+								</span>
+              <span class="fm-item">
+									<input type="radio" value="3" data-value="3" name="f-options-2-10" id="f-options-2-10-3" class="fm-rad-etc">
+									<label for="f-options-2-10-3" class="fm-rad-i risk" id="fm-rad-i">
+										<span class="in">
+											<span class="ir-b i-risk-3">고수익, 고위험</span>
+											<span class="range">
+												<span class="max">최고 <em>+25%</em></span>
+												<span class="min">최저 <em>-12%</em></span>
+											</span>
+											<small class="ps">기대수익률 15%</small>
+										</span>
+									</label>
+								</span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev9()' style="opacity:1;">이전</button>
+              <button
+                type="button"
+                data-rel="next"
+                class="btn point"
+                onclick='next10()'
+              >
+                다음
+              </button>
+            </div>
+          </li>
+          <li id='q11' data-step="2-11" >
+            <h3 class="title" style="line-height:40px;font-size:25px;">
+              11. 당신이 신뢰하는 친구가 창업을 위해 투자자를 모집하고 있습니다.<br>
+              사업이 성공한다면 <strong>100배의 이득</strong>이 생기지만, 실패한다면 <strong>모든 투자금액을 잃게 됩니다</strong>.<br>
+              당신의 친구는 <strong>성공 확률이 20%</strong>라고 예측하고 있습니다. 당신이 자금을 가지고 있다면, 얼마나 투자하시겠습니까?
+            </h3>
+            <div class="option col-4">
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="1"
+                  data-value="1"
+                  name="f-options-2-11"
+                  id="f-options-2-11-1"
+                  class="fm-rad-etc"
+                  !checked=""
+                />
+                <label for="f-options-2-11-1" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;">전혀 하지 않는다</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="2"
+                  data-value="2"
+                  name="f-options-2-11"
+                  id="f-options-2-11-2"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-11-2" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >한 달 치의 월급</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="3"
+                  data-value="3"
+                  name="f-options-2-11"
+                  id="f-options-2-11-3"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-11-3" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >세 달 치의 월급</span></label
+                >
+              </span>
+              <span class="fm-item">
+                <input
+                  type="radio"
+                  value="4"
+                  data-value="4"
+                  name="f-options-2-11"
+                  id="f-options-2-11-4"
+                  class="fm-rad-etc"
+                />
+                <label for="f-options-2-11-4" class="fm-rad-i" id="fm-rad-i"
+                  ><span class="in" style="font-size:20px;" >여섯 달 치의 월급</span></label
+                >
+              </span>
+            </div>
+            <div class="btnarea">
+              <button type="button" data-rel="prev" class="btn" onclick='prev10()' style="opacity:1;">이전</button>
+              <button
+                      id="submit_button"
+                type="button"
+                data-rel="next"
+                class="btn point">
+                결과보기
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </form>
+      <!----------------------------------------------------->
+      <div class="price-input">
+        <div class="in">
+          <span class="fm-item">
+            <span
+              class="fm-ipt ir-b i-won placeholder"
+              contenteditable="true"
+              data-comma="this"
+              data-maxnum="99999999999"
+              data-numtype="integer"
+              data-placeholder="true"
+              data-match="price2"
+              data-matchsub="price unit2"
+            ></span>
+          </span>
+          <span class="val" data-matchsub="price2 unit1" placeholder="0원"
+            >0원</span
+          >
+          <button type="button" class="btn" data-rel="price-input-close">
+            입력
+          </button>
+        </div>
+      </div>
+
+
+      <a type="button" data-rel="close" class="btn-close" href="/portfolio">닫기</a>
+    </div>
+  <script>
+  $(document).ready(function() {
+  $("#q").attr("data-visible","true");
+$("#q1").attr("data-visible","true");
+});
+  function next()  {
+  $("#q1").removeAttr("data-visible");
+  $("#q2").attr("data-visible","true");
+
+}
+function next2()  {
+  $("#q2").removeAttr("data-visible");
+  $("#q3").attr("data-visible","true");
+
+}
+function next3()  {
+  $("#q3").removeAttr("data-visible");
+  $("#q4").attr("data-visible","true");
+
+}
+function next4()  {
+  $("#q4").removeAttr("data-visible");
+  $("#q5").attr("data-visible","true");
+
+}
+function next5()  {
+  $("#q5").removeAttr("data-visible");
+  $("#q6").attr("data-visible","true");
+
+}
+function next6()  {
+  $("#q6").removeAttr("data-visible");
+  $("#q7").attr("data-visible","true");
+
+}
+function next7()  {
+  $("#q7").removeAttr("data-visible");
+  $("#q8").attr("data-visible","true");
+
+}
+function next8()  {
+  $("#q8").removeAttr("data-visible");
+  $("#q9").attr("data-visible","true");
+
+}
+function next9()  {
+  $("#q9").removeAttr("data-visible");
+  $("#q10").attr("data-visible","true");
+
+}
+function next10()  {
+  $("#q10").removeAttr("data-visible");
+  $("#q11").attr("data-visible","true");
+
+}
+function prev()  {
+  $("#q2").removeAttr("data-visible");
+  $("#q1").attr("data-visible","true");
+
+}
+function prev2()  {
+  $("#q3").removeAttr("data-visible");
+  $("#q2").attr("data-visible","true");
+
+}
+function prev3()  {
+  $("#q4").removeAttr("data-visible");
+  $("#q3").attr("data-visible","true");
+
+}
+function prev4()  {
+  $("#q5").removeAttr("data-visible");
+  $("#q4").attr("data-visible","true");
+
+}
+function prev5()  {
+  $("#q6").removeAttr("data-visible");
+  $("#q5").attr("data-visible","true");
+
+}
+function prev6()  {
+  $("#q7").removeAttr("data-visible");
+  $("#q6").attr("data-visible","true");
+
+}
+function prev7()  {
+  $("#q8").removeAttr("data-visible");
+  $("#q7").attr("data-visible","true");
+
+}
+function prev8()  {
+  $("#q9").removeAttr("data-visible");
+  $("#q8").attr("data-visible","true");
+
+}
+function prev9()  {
+  $("#q10").removeAttr("data-visible");
+  $("#q9").attr("data-visible","true");
+
+}
+function prev10()  {
+  $("#q11").removeAttr("data-visible");
+  $("#q10").attr("data-visible","true");
+
+}
+
+$(document).ready(function() {
+  $('#submit_button').click(function(){
+        var q1 = $( "input[name='f-options-2-1']:checked" ).val();
+        var q2 = $( "input[name='f-options-2-2']:checked" ).val();
+        var q3 = $( "input[name='f-options-2-3']:checked" ).val();
+        var q4 = $( "input[name='f-options-2-4']:checked" ).val();
+        var q5 = $( "input[name='f-options-2-5']:checked" ).val();
+        var q6 = $( "input[name='f-options-2-6']:checked" ).val();
+        var q7 = $( "input[name='f-options-2-7']:checked" ).val();
+        var q8 = $( "input[name='f-options-2-8']:checked" ).val();
+        var q9 = $( "input[name='f-options-2-9']:checked" ).val();
+        var q10 = $( "input[name='f-options-2-10']:checked" ).val();
+        var q11 = $( "input[name='f-options-2-11']:checked" ).val();
+
+        qlist = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11]
+        var checknum = $('input[name="f-options-2-1"]:checked').length +
+        $('input[name="f-options-2-2"]:checked').length+
+        $('input[name="f-options-2-3"]:checked').length+
+        $('input[name="f-options-2-4"]:checked').length+
+        $('input[name="f-options-2-5"]:checked').length+
+        $('input[name="f-options-2-6"]:checked').length+
+        $('input[name="f-options-2-7"]:checked').length+
+        $('input[name="f-options-2-8"]:checked').length+
+        $('input[name="f-options-2-9"]:checked').length+
+        $('input[name="f-options-2-10"]:checked').length+
+        $('input[name="f-options-2-11"]:checked').length
+        if(checknum!=11){
+        alert("모든 문항을 선택해주세요.");
+        }
+        else{
+        $("#qlist").val(qlist)
+
+         $("#qform").submit();
+        }
+   });
+});
+
+
+
+  </script>
+  <style>
+	@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body, span, button {
+    font-family: 'GmarketSansMedium';
+    font-size: 1.0em;
+}
+ p {
+    font-family: 'GmarketSansLight';
+    font-size: 1.0em;
+}
+.portfolio-option .options .col-4 .fm-item {
+    margin-left: 25px;
+    margin-top: 1%;
+}
+</style>
+<script>
+</script>
+  </body>
+</html>

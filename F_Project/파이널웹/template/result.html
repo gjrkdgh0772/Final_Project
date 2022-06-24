@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- <script type="text/javascript" src="/js/libs/jquery-3.4.1.js"></script> -->
+<meta charset="utf-8">
+<title>에그머니 -자산 포트폴리오 추천 서비스-</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="/static/img/sub/web_logo.png">
+<link rel="stylesheet" href="/static/css/swiper.min.css">
+<link rel="stylesheet" href="/static/css/common.css">
+<link rel="stylesheet" href="/static/css/sub.css">
+
+
+<script src="/static/js/libs/jquery-3.4.1.js"></script>
+<script src="/static/js/libs/jquery-ui.min.js"></script>
+<script src="/static/js/libs/jquery.easing.min.js"></script>
+<script src="/static/js/libs/jquery.touchSwipe.min.js"></script>
+<script src="/static/js/libs/imagesloaded.pkgd.min.js"></script>
+<script src="/static/js/libs/ScrollMagic.min.js"></script>
+<script src="/static/js/libs/swiper.min.js"></script>
+<script src="/static/js/libs/moment.min.js"></script>
+<script src="/static/js/libs/Chart.bundle.min.js"></script>
+<script src="/static/js/libs/chartjs-plugin-labels.min.js"></script>
+<script src="/static/js/ui.utill.js"></script>
+<script src="/static/js/ui.commonfa93.js?v=20210525"></script>
+
+<script src="/static/js/libs/jquery.cookie.js"></script>
+<script src="/static/js/common/cookie.js"></script>
+<script src="/static/js/common/gnb.js"></script>
+
+<script src="/static/js/common/checkbox.js"></script>
+<meta name="naver-site-verification" content="08326abc88a02c4f0cb14782411de82f4d614aa8" />
+
+</head>
+<body>
+<style>
+	@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+span,a,h2 {
+    font-family: 'GmarketSansMedium';
+    font-size: 1.0em;
+}
+ body {
+    font-family: 'GmarketSansLight';
+    font-size: 1.0em;
+}
+ dd{
+    font-family: 'GmarketSansLight';
+    font-size: 1.0em;
+}
+.sub-head .g-title {
+    display: inline-block;
+    font-family: GmarketSansMedium;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    vertical-align: middle;
+}
+.sub-head {
+    position: relative;
+    width: 1200px;
+    padding: 50px 0 73px 80px;
+    margin-left: 100px;
+    box-sizing: content-box;
+    z-index: 20;
+
+}
+</style>
+<div class="wrap">
+<!-- class="header" -->
+
+
+
+<!--#################### header // ####################-->
+<header class="header" style="height:75px;">
+	<a href="#container" class="skip">본문바로가기</a>
+	<div class="header-inner">
+		<div class="gnb-wrap">
+			<a href="/" class="gnb-logo" style="width:0px;height:0px;">
+				<img src="/static/img/sub/logo.png" width="205px" height="72px" style="position:relative;top:-30px;left:-80px;"></a>
+			<nav class="gnb-nav">
+				<ul class="menu" style="margin-left:150px;">
+					<li class="dep-1"><a href="/serviceinfo">서비스 정보</a></li>
+					<li class="dep-1"><a href="/human">개발자 정보</a></li>
+					<li class="dep-1"><a href="/portfolio">포트폴리오 추천 서비스</a></li>
+					<li class="dep-1"><a href="">백테스팅</a></li>
+					<li class="dep-1"><a href="">기업분석</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+
+	
+	
+	
+		<input type="hidden" id="U_IDN" value="">
+		<input type="hidden" id="U_FCD" value="">
+	
+	
+	<input type="hidden" id="__currenturi" value="/myplan/fund/portfolio">
+</header>
+<!--#################### // header ####################-->
+
+
+
+
+
+<!--#################### container // ####################-->
+<div id="container" class="container">
+
+
+      <div class="contents">
+
+
+
+        <div class="portfolio-result" >
+          <dl class="tendency" >
+            <dt>
+              <small><b>투자성향 안내</b></small>
+              <b>고객님의 투자성향은<br> <strong><b>{{F_TYPE | safe}}</b></strong> 입니다.</b>
+            </dt>
+			  <hr align="center" style="background-color : black; height : 1.5px;border : 0; width: 100%;">
+            <dd><div align="center"><img src="/static/img/sub/투자성향.png" width="504px"></div>
+
+              <span id="risk3" style="font-size:1.1em"><br>
+                {{F_CON | safe}}
+              </span>
+            </dd>
+          </dl>
+			<dl class="tendency" style="padding: 120px 0 90px 0px;">
+            <dt style="margin-bottom:10px">
+              <small><b>국내 경기 안내</b></small>
+              <b>현재 국내 경기는 <strong><b>하강국면</b></strong> 입니다.</b></dt>
+
+
+				<hr align="center" style="background-color : black; height : 1.5px;border : 0; width: 100%;">
+              <div id='chart1' class='chart1'”></div>
+              <div style="text-align: end;"><small style="font-size:0.8em"><b>* 약 70만건 뉴스 데이터를 활용하여 자체 개발한 경기 지수</b> </small></div>
+            <dd>
+
+              <span id="risk3"><br>
+                투자와 생산, 고용, 소비가 전부 하락하는 국면입니다. <br>
+                상품이 수요에 비해 공급이 상대적으로 부족해지는 수요초과 현상으로 물가상승을 유발합니다.<br>
+                생산, 고용이 줄고, 실업이 늘면 소비는 더 줄어들고 악순환을 만들어 경기불황으로 접어듭니다.<br>
+                불황 때는 문 닫는 기업도 늘고, 생산재, 소비재, 인건비 등도 낮은 수준에 머물기 때문입니다.<br>
+
+                긴축정책을 대비한, 경기위축 하락장을 대비하여 이자소득이나 배당소득 수준의 안정적인 투자를 목표로 하고<br>
+                <strong style="font-size:1.2em;"><b>투자원금의 손실을 최소화하는 상품(채권 등)에 투자하는 저위험 포트폴리오를 추천드립니다.</b><strong>
+              </span>
+            </dd>
+          </dl>
+
+        </div>
+
+        <div class="barchart-stack">
+          <h2 class="g-title-8" style="font-family: 'GmarketSansMedium';font-size:30px;">포트폴리오 자산 군 비중</h2>
+          <div class="chart" id="bar-chart" aria-label="bar chart" style="">
+            <span class="area">
+				<span class="item point-1" style="width: {{MY_LIST[1] | safe}}%"
+                ><span class="name">{{MY_LIST[0] | safe}}</span
+                ><span class="val">{{MY_LIST[1] | safe}}%</span></span
+              >
+				<span class="item point-2" style="width: {{MY_LIST[3] | safe}}%"
+                ><span class="name">{{MY_LIST[2] | safe}}</span
+                ><span class="val">{{MY_LIST[3] | safe}}%</span></span
+              >
+				<span class="item point-3" style="width: {{MY_LIST[5] | safe}}%"
+                ><span class="name">{{MY_LIST[4] | safe}}</span
+                ><span class="val">{{MY_LIST[5] | safe}}%</span></span
+              >
+				<span class="item point-4" style="width: {{MY_LIST[7] | safe}}%"
+                ><span class="name">{{MY_LIST[6] | safe}}</span
+                ><span class="val">{{MY_LIST[7] | safe}}%</span></span
+              >
+				<span class="item point-5" style="width: {{MY_LIST[9] | safe}}%"
+                ><span class="name">{{MY_LIST[8] | safe}}</span
+                ><span class="val">{{MY_LIST[9] | safe}}%</span></span
+              >
+				<span class="item point-6" style="width: {{MY_LIST[11] | safe}}%"
+                ><span class="name">{{MY_LIST[10] | safe}}</span
+                ><span class="val">{{MY_LIST[11] | safe}}%</span></span
+              >
+				<span class="item point-7" style="width: {{MY_LIST[13] | safe}}%"
+                ><span class="name">{{MY_LIST[12] | safe}}</span
+                ><span class="val">{{MY_LIST[13] | safe}}%</span></span
+              >
+<!--				<span class="item point-3 ty-2" style="width: 6.570000000000001%"-->
+<!--                ><span class="name" style="left: -11.1406px">한국 주식</span-->
+<!--                ><span-->
+<!--                  class="val"-->
+<!--                  style="height: 22.7208px; transform: rotate(-28.3275deg)"-->
+<!--                  >6.57%</span-->
+<!--                ></span-->
+<!--              >-->
+				</span>
+			  <span class="ticks step-10"
+              ><span class="item"><span class="num">0</span></span
+              ><span class="item"><span class="num">10</span></span
+              ><span class="item"><span class="num">20</span></span
+              ><span class="item"><span class="num">30</span></span
+              ><span class="item"><span class="num">40</span></span
+              ><span class="item"><span class="num">50</span></span
+              ><span class="item"><span class="num">60</span></span
+              ><span class="item"><span class="num">70</span></span
+              ><span class="item"><span class="num">80</span></span
+              ><span class="item"><span class="num">90</span></span
+              ><span class="item"><span class="num">100</span></span></span
+            >
+          </div>
+
+          <ul class="legend">
+            <li class="item point-1">
+              <span class="name">{{MY_LIST[0] | safe}}</span>
+              <span class="val">{{MY_LIST[1] | safe}}%</span>
+              
+            </li>
+
+            <li class="item point-2">
+              <span class="name">{{MY_LIST[2] | safe}}</span>
+              <span class="val">{{MY_LIST[3] | safe}}%</span>
+              
+            </li>
+            <li class="item point-3">
+              <span class="name">{{MY_LIST[4] | safe}}</span>
+              <span class="val">{{MY_LIST[5] | safe}}%</span>
+              
+            </li>
+
+            <li class="item point-4">
+              <span class="name">{{MY_LIST[6] | safe}}</span>
+              <span class="val">{{MY_LIST[7] | safe}}%</span>
+              
+            </li>
+            <li class="item point-5">
+              <span class="name">{{MY_LIST[8] | safe}}</span>
+              <span class="val">{{MY_LIST[9] | safe}}%</span>
+              
+            </li>
+
+            <li class="item point-6">
+              <span class="name">{{MY_LIST[10] | safe}}</span>
+              <span class="val">{{MY_LIST[11] | safe}}%</span>
+              
+            </li>
+
+            <li class="item point-7">
+              <span class="name">{{MY_LIST[12] | safe}}</span>
+              <span class="val">{{MY_LIST[13] | safe}}%</span>
+
+            </li>
+          </ul>
+        </div>
+        <div class="portfolio-result" style="padding: 20px 30px 65px 35px;">
+        <div class="barchart-stack">
+            <h2 class="g-title-8" style="font-family: 'GmarketSansMedium';margin: 60px 0 0px;font-size:30px;">주식 종목 추천</h2>
+            <div style="margin-top:15px;"><h5 style="font-size:0.8em"><b>기업 재무제표를 기반으로 기본적 분석을 실시하고, 투자자의 투자 성향에 맞춘 투자 전략과 종목을 추천합니다.</b></h5></div>
+            <div style="text-align:right;"><span class="btn-in"><a href="#KBPC_Portfolio_01P" data-uipop='1'>투자 전략 설명</a></span></div>
+          <div id="KBPC_Portfolio_01P" class="pop-layer ty-2" data-uipopset=''>
+				<div class="box ty-2">
+					<h2 class="g-title-2 cmgt-0" style="font-family: 'GmarketSansMedium'"><strong>투자 전략 설명</strong></h2>
+				</div>
+				<div class="pop-cont ty-2">
+					<ul class="list-dot ty-3">
+						<li><b>그레이엄 전략</b></li>
+						<ol>
+						<li>- 재무 분석 분야의 최고봉으로 불리는 그레이엄은 재무 분석이라는 말을 만들어낸 장본인입니다. </li>
+						<li>- 그가 생전에 낸 ‘현명한 투자자’는 현재까지 읽혀지는 최고의 고전으로 평가되고 있습니다. </li>
+						<li>-  그레이엄은 주식을 선정하는데 두 가지 접근법을 사용하는데 순자산가치보다 2/3 미만에 거래되고 있는 주식을 매입하는 것과 주가가 내려서 낮은 PER에 거래되고 있는 주식에 초점을 맞춥니다.</li>
+							</ol>
+						<li><b>버핏 전략</b></li>
+						<ol>
+						<li>- 워런 버핏의 투자원칙을 보면 그가 얼마나 손해에 민감한지 알 수 있습니다. </li>
+						<li>- 그의 종목 선정하는 기준은 시장에 지배력을 갖추고 있는 독점적 기업, 자본이익률이 높은 기업, 누구라도 쉽게 이해할 수 있는 사업내용을 가진 기업, 이익을 예상하기 쉬운 기업, 항상 주주를 위한 경영하는 기업, 재고수준이 낮고 자산회전율이 높은 기업, 정부 규제를 받지 않는 기업으로 정의할 수 있습니다.</li>
+							</ol>
+                        <li><b>린치 전략</b></li>
+						<ol>
+						<li>- 피터 린치는 13년 동안 마이너스 수익률을 기록한 적 없는 월가의 전무후무한 기록을 남긴 전설적 인물로서 연평균 수익률이 29%나 되는 전략가입니다.</li>
+						<li>- 대부분의 종목이 저성장주, 우량주, 고성장주, 경기순환주, 턴어라운드주, 자산주 여섯 가지 카테고리 중 하나에 속합니다.</li>
+							</ol>
+                        <li><b>3대 거장 전략</b></li>
+						<ol>
+						<li>- 기본적 분석의 대표적 인물 3대 거장 ‘벤자민 그레이엄’, ‘워런 버핏’, ‘피터 린치’의 주식 종목 선택 기준을 종합한 전략입니다.</li>
+						<li>- 이들은 기본적 분석을 통해서 기업의 진정한 내재가치를 예상하고 형성되는 주식의 가격이 시장에 반영될 것으로 기대합니다. </li>
+                        <li>- 기업의 재무제표나 영업보고서를 면밀하게 검토하여 철저하게 양보다 질적인 측면에 집중한 전략입니다. </li>
+							</ol>
+                        <li><b>유동성 전략</b></li>
+						<ol>
+						<li>- 기업을 분석할 때, 부채로 인한 파산 우려, 상환 능력 정도를 대략적으로 파악하기에 유용한 전략입니다.</li>
+						<li>- 또 기업의 단기 지급능력에 해당하는 현금 동원력을 가늠하는 지표로서 재무구조 안정성을 측정할 수 있습니다.</li>
+							</ol>
+                        <li><b>활동성 전략</b></li>
+						<ol>
+						<li>- 기업이 소유하고 있는 자산들이 얼마나 효율적으로 이용되고 있는가를 가늠하는 전략입니다.</li>
+						<li>- 기업의 활동을 대표하는 것은 매출액이고 이를 뒷받침하기 위해 투자된 구체적인 형태의 자산으로서 외상매출금, 재고자산, 총자산 등이 있습니다.</li>
+                        <li>- 따라서 매출액과 각종 주요 자산의 관계를 비율에 의해서 평가하는 것도 기업을 이해하는 데 큰 도움이 됩니다.</li>
+							</ol>
+                        <li><b>레버리지 전략</b></li>
+						<ol>
+						<li>- 기업이 어느 정도 타인자본에 의존하고 있는가를 측정하는 전략입니다.</li>
+						<li>- 일반적으로 레버리지는 기업의 부채의존도를 의미합니다.</li>
+                        <li>- 경기불황에 따른 수익감소시 타인자본 의존에 따른 고정비 부담으로 인해 기업의 지급능력이 악화되고 지급불능의 위험이 높아지게 됩니다.</li>
+                        <li>- 따라서 레버리지 전략은 기업의 재무구조를 평가하고 수익의 변동에 대해 채권보유자가 부담하는 위험이 어느 정도 보호되는가를 평가하는 것으로 기업의 재무위험을 평가합니다.</li>
+							</ol>
+                        <li><b>성장성 전략</b></li>
+						<ol>
+						<li>- 기업의 외형, 매출 및 이익의 성장성을 측정하는 전략 입니다.</li>
+						<li>- 기업의 성장성을 판단하고 예측하기 위해서는 매출액증가율, 총자산증가율, 경상이익증가율, 당기순이익증가율의 비율을 많이 사용합니다.</li>
+                        <li>- 과거 수년간의 이러한 비율들을 비교 분석함으로써 보다 효율적인 판단자료로서 기업경영에 활용되게 됩니다.</li>
+							</ol>
+                        <li><b>수익성 전략</b></li>
+						<ol>
+						<li>- 기업이 일정한 기간에 있어서의 기업활동의 최종적인 성과, 즉 손익의 상태를 측정하고 그 성과의 원인을 분석, 검토하는 전략입니다.</li>
+						<li>- 기업의 수익성을 나타내는 지표로는 ROA, 경영자본영업이익률, 매출액순이익률 등이 있습니다.</li>
+                        <li>- 이중 경영자본영업이익률이 가장 중요한 지표로 간주됩니다. </li>
+                        <li>- 경영자본영업이익률은 영업이익에서 금융비용 등을 뺀 경상이익이 매출액에서 차지하는 비중을 말합니다. </li>
+							</ol>
+                        <li><b>시장가치 전략</b></li>
+						<ol>
+						<li>- 간단히 말해 기업이 주식시장에서 가치가 어떻게 평가되고 있는가를 나타내는 전략입니다.</li>
+						<li>- 기업의 경영 활동으로 얻은 성과를 기초로 하여 시장에서 평가된 주식의 가치를 나타내는 재무 비율. 주가, 주당 순이익, 장부 가치 따위의 관계를 통하여 기업의 과거 성과와 미래 전망이 어떻게 평가되고 있는지 보여 주는 전략입니다.</li>
+                        <li>- 이중 경영자본영업이익률이 가장 중요한 지표로 간주됩니다. </li>
+                        <li>- 주당순이익(EPS :  Earning Per Share)은 당기순이익을 주식수를 나눈 것입니다. EPS는 투자자에게 이익의 증가 혹은 감소를 알려줍니다. </li>
+							</ol>
+
+					</ul>
+				</div>
+				<button type="button" data-uipop='0' class="pop-btn-close"><span class="ir i-close">닫기</span></button>
+			</div>
+          <ul class="legend">
+              <li style="padding:0px;height:0px;border-top:0"></li>
+              <li style="padding:0px;height:0px;border-top:0"></li>
+            <li class="item point-13" style="width:100%;">
+              <span class="name">{{STR_LIST[0] | safe}}</span>
+              <span class="val" style="width:1060px;"><br>{{STOCK_LIST[0][0] | safe}} {{STOCK_LIST[0][1] | safe}} {{STOCK_LIST[0][2] | safe}} {{STOCK_LIST[0][3] | safe}} {{STOCK_LIST[0][4] | safe}}
+              {{STOCK_LIST[0][5] | safe}} {{STOCK_LIST[0][6] | safe}} {{STOCK_LIST[0][7] | safe}} {{STOCK_LIST[0][8] | safe}} {{STOCK_LIST[0][9] | safe}} {{STOCK_LIST[0][10] | safe}}</span>
+            </li>
+              <li style="padding:0px;height:0px;border-top:0"></li>
+            <li class="item point-8" style="width:100%;">
+              <span class="name">{{STR_LIST[1] | safe}}</span>
+              <span class="val"><br>{{STOCK_LIST[1][0] | safe}} {{STOCK_LIST[1][1] | safe}} {{STOCK_LIST[1][2] | safe}} {{STOCK_LIST[1][3] | safe}} {{STOCK_LIST[1][4] | safe}}
+              {{STOCK_LIST[1][5] | safe}} {{STOCK_LIST[1][6] | safe}} {{STOCK_LIST[1][7] | safe}} {{STOCK_LIST[1][8] | safe}} {{STOCK_LIST[1][9] | safe}} {{STOCK_LIST[1][10] | safe}}</span>
+            </li>
+              <li style="padding:0px;height:0px;border-top:0"></li>
+            <li class="item point-9" style="width:100%;">
+              <span class="name">{{STR_LIST[2] | safe}}</span>
+              <span class="val"><br>{{STOCK_LIST[2][0] | safe}} {{STOCK_LIST[2][1] | safe}} {{STOCK_LIST[2][2] | safe}} {{STOCK_LIST[2][3] | safe}} {{STOCK_LIST[2][4] | safe}}
+              {{STOCK_LIST[2][5] | safe}} {{STOCK_LIST[2][6] | safe}} {{STOCK_LIST[2][7] | safe}} {{STOCK_LIST[2][8] | safe}} {{STOCK_LIST[2][9] | safe}} {{STOCK_LIST[2][10] | safe}}</span>
+            </li>
+              <li style="padding:0px;height:0px;border-top:0"></li>
+            <li class="item point-10" style="width:100%;">
+              <span class="name">{{STR_LIST[3] | safe}}</span>
+              <span class="val"><br>{{STOCK_LIST[3][0] | safe}} {{STOCK_LIST[3][1] | safe}} {{STOCK_LIST[3][2] | safe}} {{STOCK_LIST[3][3] | safe}} {{STOCK_LIST[3][4] | safe}}
+              {{STOCK_LIST[3][5] | safe}} {{STOCK_LIST[3][6] | safe}} {{STOCK_LIST[3][7] | safe}} {{STOCK_LIST[3][8] | safe}} {{STOCK_LIST[3][9] | safe}} {{STOCK_LIST[3][10] | safe}}</span>
+            </li>
+              <li style="padding:0px;height:0px;border-top:0"></li>
+
+          </ul>
+
+
+        </div>
+          </div>
+          <div class="barchart-stack">
+            <h2 class="g-title-8" style="font-family: 'GmarketSansMedium';margin: 93px 0 0px;font-size:30px;">최근 5년 백테스팅 평균 수익률 : <strong style="font-size:1.3em;color:#e33e3a;"><b>{{RTMEAN | safe}}</b></strong> %</h2>
+          <div id='chart' class='chart'”></div>
+
+        </div>
+
+        <div class="btn-wrap mgt-8">
+          <a href="/portfolio" class="btn-t btn-c w-fix-2"
+            >다시 분석하기</a
+          >
+        </div>
+      </div>
+    </div>
+<!--#################### // container ####################-->
+
+<!-- class="footer" -->
+
+<!--#################### footer // ####################-->
+<footer class="footer" style="padding:5px">
+	<ul class="footer-menu" style="padding:5px;text-align:right;">
+		<img src="/static/img/sub/logo_footer.png" width="150px">
+
+	</ul>
+
+	
+	
+
+</footer>
+<!--#################### // footer ####################-->
+
+
+</div>
+</body>
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{graphJSON | safe}};
+  Plotly.plot('chart',graphs,{});
+
+  var graphs = {{graphJSON1 | safe}};
+  Plotly.plot('chart1',graphs,{});
+
+</script>
+<!-- Mirrored from www.kbam.co.kr/myplan/fund/portfolio by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 May 2022 02:21:01 GMT -->
+</html>
